@@ -1,378 +1,279 @@
 section.center data-background="#000"
-  h1.white Konnichiwa Ruby
+  h1.white Require
 
-section
-  h2 Variables
-  p The variables assign a name to something
-  pre: code
-    '
-      munchies = "chunky bacon" # No need for declaration
-      name = something          # The basic form
+section.center data-background="#F00"
+  p.white I'm unavailable next week
 
-section
-  h2 Variables
-  p A name can point to any type
-  pre: code.ruby
-    '
-      an_integer = 42
-      a_float = 3.14
-      a_string = "this is a string literal"
-      an_object = Object.new
+section.center data-background="#F00"
+  p.white November 10th to 15th
 
-section
-  h2 Variables
-  p Nothing is copied, everything is referential
-  pre: code.ruby
-    '
-      >> mood = "happy"
-      => "happy"
-      >> downer = mood
-      => "happy"
-      >> downer["happy"] = "sad"
-      => "sad"
-      >> mood
-      => "sad"
+section.center data-background="#F00"
+  p.white What does that mean?
 
-section
-  h2 Variables
-  p And the type can be changed midway
-  pre: code.ruby
-    '
-      a_string = 42         # Whether that is a good idea
-      a_string = Object.new # is left as an excersice ;)
+section.center data-background="#87cefa"
+  p.white Beaches
 
-section
-  h2 Global Variables
-  p Global variables are visible from everywhere
-  pre: code.ruby
-    '
-      $do_you_really_need_that = "no"
+section.center data-background="#87cefa"
+  p.white Responsible drinking
 
-section
-  h2 Constants
-  p Constants start with a capital letter
-  pre: code.ruby
-    '
-      ANSWER = 42            # This is a constant!
-      Europe = Continent.new # So is this!
+section.center data-background="#87cefa"
+  p.white Safe sex
 
-section
-  h2 Constants
-  p Constants are not strictly enforced
-  pre: code.ruby
-    '
-      >> Foo = 42
-      => 42
-      >> Foo = 43
-      (irb):40: warning: already initialized constant Foo
-      (irb):39: warning: previous definition of Foo was here
-      => 43
-      >>
+section.center data-background="#87cefa"
+  p.white Moderate amounts of fun
 
-section.center data-background="#000"
-  p.white Naming is an important part of the code
+section.center data-background="#87cefa"
+  p.white Moderate amounts of fun
 
-section.center data-background="#000"
-  p.white Don't be sloppy with it
+section.center data-background="#F00"
+  p.white For me and me only
 
-section.center data-background="#000"
-  p.white Code lives a long time
-
-section.center data-background="#000"
-  p.white You want to understand it 1 year from now
-
-section.center data-background="#000"
-  p.white You want to understand it 5 year from now
+section.center data-background="#F00"
+  p.white You still got to go to class
 
 section.center
-  pre: code.ruby
-    '
-      everything = 42
-      pi = 3.14
+  img.inline src="img/troll.png"
 
-section
-  h2 Identifiers
-  ul
-    li alphanumeric characters (A-Za-z0-9)
-    li.fragment underscores (_)
-    li.fragment may not begin with a digit (0-9)
-
-section
-  h2 Identifiers
-  ul
-    li identifiers that are method names may
-    li.fragment end with a question mark (?)
-    li.fragment end with a exclamation point (!)
-    li.fragment end with equals sign (=)
-
-section
-  h2 Reserved Words
-  pre: code.ruby
-    '
-      __FILE__  and    def       end     in      or      self   unless
-      __LINE__  begin  defined?  ensure  module  redo    super  until
-      BEGIN     break  do        false   next    rescue  then   when
-      END       case   else      for     nil     retry   true   while
-      alias     class  elsif     if      not     return  undef  yield
-
-section
-  h2 Integer
-  p You can represent integers with the following literals
-  pre: code.ruby
-   '
-     123456  # Fixnum
-     123_456 # Fixnum (underscore ignored)
-     -543    # Negative Fixnum
-
-section
-  h2 Integer
-  p If the integer literal is too big, it will switch to a big number type
-  pre: code.ruby
-   '
-     123456                  # Fixnum
-     123_456_789_123_345_789 # Bignum (2 ** 62 onwards)
-
-section
-  h2 Integer
-  p You can represent integers in hexadecimal, octal and binary forms
-  pre: code.ruby
-    '
-      0xaabb     # Hexadecimal (Fixnum)
-      0377       # Octal (Fixnum)
-      -0b101_010 # Binary (Fixnum)
-
-section
-  h2 Integer
-  p Fixnum and Bignum have Integer as a base class
-  pre: code.ruby
-    '
-      => Bignum
-      >> Integer > Fixnum
-      => true
-      >> Integer > Bignum
-      => true
+section.center
+  p Let me introduce you to Stanlislav and Akseniya
 
 section.center data-background="#000"
-  p.white Everything in Ruby is an object
+  h2.white Questions
 
-section.center data-background="#000"
-  p.white Objects have actions
+section.center
+  p What does Object#is_a? do?
 
-section.center data-background="#000"
-  p.white universe.expand
+section.center
+  p What does Object#kind_of? do?
 
-section.center data-background="#000"
-  p.white universe.kill_them_all_eventually
+section.center
+  p What does Object#instance_of? do?
 
-section.center data-background="#000"
-  p.white We call those actions methods
+section.center
+  p What is a method alias?
 
-section.center data-background="#000"
-  p.white Don't worry too much about them for now
+section.center
+  p What is the difference between alias and alias_method?
 
-section
-  h2 Integer
-  p As every object, integers respond to methods
-  pre: code.ruby
+section.center
+  p What does Object#send does?
+
+section.center
+  p What does Object#public_send does?
+
+section.center
+  p What does Kernel#raise do?
+
+section.center
+  p What does Kernel#fail do?
+
+section.center
+  pre: code.ruby contenteditable="true"
     '
-      >> 3.times { puts "♪ ruby ♪" }
-      ♪ ruby ♪
-      ♪ ruby ♪
-      ♪ ruby ♪
-      => 3
+      begin
+        {}.fetch(42)
+      rescue IndexError
+        :index_error
+      rescue KeyError
+        :key_error
+      end
 
-section
-  h2 Integer
-  p As every object, integers respond to methods
-  pre: code.ruby
+section.center
+  pre: code.ruby contenteditable="true"
     '
-      >> 16.even?
-      => true
+      begin
+        [].fetch(42)
+      rescue StandardError
+        :standard_error
+      rescue IndexError
+        :index_error
+      end
 
-section
-  h2 Floats
-  p Floats can be expressed by scientific notation
-  pre: code.ruby
+section.center
+  pre: code.ruby contenteditable="true"
     '
-      3.1415926 # Float
-      6.022e23  # Float
+      begin
+        raise Exception
+      rescue
+        :what_kind_of_error?
+      end
 
-section
-  h2 Floats
-  p Floats will be floats
-  pre: code.ruby
+section.center
+  pre: code.ruby contenteditable="true"
     '
-      >> 0.1 + 0.2
-      => 0.30000000000000004
-      >> 0.1 + 0.2 == 0.3
-      => false
+      begin
+        [].fetch(42)
+      rescue
+        :what_kind_of_error?
+      end
 
-section
-  h2 Rational
-  p A nice little addition
-  pre: code.ruby
+section.center
+  p What does Object#=== does?
+
+section.center
+  pre: code.ruby contenteditable="true"
     '
-      1/2r # Rational
+      class something
+        private def shh() "IT'S A SECRET!" end
+      end
 
-section.center data-background="#000"
-  p.white Spoiler alert
-
-section
-  h2 Numbers
-  p There are complex and big decimal implementations
-  pre: code.ruby
+section.center
+  pre: code.ruby contenteditable="true"
     '
-      >> require 'complex'
-      => true
-      >> Complex '1i'
-      => (0+1i)
+      module Foo
+        INSIDE = :foo
+        module Bar
+          INSIDE = :bar
+          module Quux
+            INSIDE = :quux
+          end
+        end
+      end
 
-section
-  h2 Numbers
-  p There are complex and big decimal implementations
-  pre: code.ruby
+section.center
+  pre: code.ruby contenteditable="true"
     '
-      >> require 'bigdecimal'
-      => true
-      >> BigDecimal('125') / BigDecimal('100000')
-      => #<BigDecimal:7f9c2b070610,'0.125E-2',9(36)>
+      Foo::INISDE            #=> :?
+      Foo::Bar::INISDE       #=> :?
+      Foo::Bar::Quux::INSIDE #=> :?
 
-section.center data-background="#000"
-  p.white If you need to store money, do that in BigDecimal
-
-section
-  h2 TrueClass
-  p The "formal" truth
-  pre: code.ruby
+section.center
+  pre: code.ruby contenteditable="true"
     '
-      'He said "Hello, mister"...'
-      "He said, \"There are miltiline\nstrings\"..."
+      Foo::INISDE            #=> :foo
+      Foo::Bar::INISDE       #=> :?
+      Foo::Bar::Quux::INSIDE #=> :?
 
-section
-  h2 String
-  p They can be written with single and double quotes
-  pre: code.ruby
+section.center
+  pre: code.ruby contenteditable="true"
     '
-      'He said "Hello, mister"...'
-      "He said, \"There are miltiline\nstrings\"..."
+      Foo::INISDE            #=> :foo
+      Foo::Bar::INISDE       #=> :bar
+      Foo::Bar::Quux::INSIDE #=> :?
 
-section
-  h2 String
-  p The two notations are not the same (unlike Python)
-  pre: code.ruby
+section.center
+  pre: code.ruby contenteditable="true"
     '
-      >> '\n' == "\n"
-      => false
-      >> "#{42}" == '#{42}'
-      => false
+      Foo::INISDE            #=> :foo
+      Foo::Bar::INISDE       #=> :bar
+      Foo::Bar::Quux::INSIDE #=> :quux
 
-section
-  h2 String
-  p Are mutable, which may surprise you
-  pre: code.ruby
+section.center
+  pre: code.ruby contenteditable="true"
     '
-      >> weather = "raining"
-      => "raining"
-      >> weather["rain"] = "snow"
-      => "snow"
-      >> weather
-      => "snowing"
+      module Foo
+        module Bar
+          module Quux
+            p INSIDE      #=> :?
+            p Bar::INSIDE #=> :?
+            p Foo::INSIDE #=> :?
+          end
+        end
+      end
 
-section
-  h2 Symbols
-  p Symbols are like lightweight strings
-  pre: code.ruby
+section.center
+  pre: code.ruby contenteditable="true"
     '
-      :a_symbol
-      :symbols_literals_should_be_valid_identifiers!
-      :"if not, they have to be written like this"
-      :'which looks kinda funny'
+      module Foo
+        module Bar
+          module Quux
+            p ::Foo::Bar::Quux::INSIDE #=> :quux
+            p ::Foo::Bar::INSIDE       #=> :bar
+            p ::Foo::INSIDE            #=> :foo
+          end
+        end
+      end
 
-section
-  h2 Symbols
-  p They are interned, meaning they always yield the same object
-  pre: code.ruby
+section.center
+  pre: code.ruby contenteditable="true"
     '
-      >> :chunky.object_id == :chunky.object_id
-      => true
-      >> "chunky".object_id == "chunky".object_id
-      => false
+      module Foo
+        module Bar
+          module Quux
+            p Object::Foo::Bar::Quux::INSIDE #=> :?
+            p Object::Foo::Bar::INSIDE       #=> :?
+            p Object::Foo::INSIDE            #=> :?
+          end
+        end
+      end
 
-section
-h2 Symbols
-p You'll use them for internal representations
-
-section.center data-background="#000"
-p.white Nobody gets the first time, its okay
-
-section
-h2 The Truth
-p
-  | Everything is true
-  span.fragment, except nil and false
-
-section
-  h2 TrueClass
-  ul
-    li There is no Boolean class in Ruby
-    li The formal truth is represented by true
-  pre: code.ruby
+section.center
+  pre: code.ruby contenteditable="true"
     '
-      >> true.class.ancestors
-      => [TrueClass, Object, Kernerl, BasicObject]
+      module Foo
+        module Bar
+          module Quux
+            p Object::Foo::Bar::Quux::INSIDE #=> :quux
+            p Object::Foo::Bar::INSIDE       #=> :bar
+            p Object::Foo::INSIDE            #=> :foo
+          end
+        end
+      end
 
-section
-  h2 FalseClass
-  ul
-    li There is no Boolean class in Ruby
-    li The formal lie is represented by true
-  pre: code.ruby
+section.center
+  pre: code.ruby contenteditable="true"
     '
-      >> false.class.ancestors
-      => [FalseClass, Object, Kernerl, BasicObject]
+      module Foo
+        module Bar
+          module Quux
+            module Object
+              INSIDE = :object
+            end
+            p Object::INSIDE                 #=> :?
+            p Object::Foo::Bar::Quux::INSIDE #=> :?
+            p Object::Foo::Bar::INSIDE       #=> :?
+            p Object::Foo::Bar::INSIDE       #=> :?
+          end
+        end
+      end
 
-section.center data-background="#000"
-  blockquote.white I call it my billion-dollar mistake.
-  p.white Tony Hoare
-
-section
-  h2 NilClass
-  p When there is nothing to return
-  pre: code.ruby
+section.center
+  pre: code.ruby contenteditable="true"
     '
-      >> def foo; end
-      => :foo
-      >> foo
-      => nil
+      module Foo
+        module Bar
+          module Quux
+            module Object
+              INSIDE = :object
+            end
+            p Object::INSIDE                 #=> :object
+            p Object::Foo::Bar::Quux::INSIDE #=> NameError
+            p Object::Foo::Bar::INSIDE       #=> NameError
+            p Object::Foo::INSIDE            #=> NameError
+          end
+        end
+      end
 
-section
-  h2 Operators
-  pre
+section.center
+  pre: code.ruby contenteditable="true"
     '
-      Method  Operator
-      Y       [ ] [ ]=
-      Y       **
-      Y       ! ~
-      Y       * / %
-      Y       + -
-      Y       >> <<
-      Y       &
-      Y       ^ |
-      Y       <= < > >=
-      Y       <=> == === != =~ !~	
-              &&	
-              ||
-              .. ...
-              ? :
-              = %= { /= -= += |= &= >>= <<= *= &&= ||= **=
-              defined?
-              not
-              or and
-              if unless while until
-              begin/end
+      module Foo
+        module Bar
+          module Quux
+            module Object
+              INSIDE = :object
+            end
+            p Object::INSIDE                   #=> :?
+            p ::Object::Foo::Bar::Quux::INSIDE #=> :?
+            p ::Object::Foo::Bar::INSIDE       #=> :?
+            p ::Object::Foo::INSIDE            #=> :?
+          end
+        end
+      end
 
-section
-  h2 Operators
-  ul
-    li They won't return strict true or false
-    li Rather the last truthy of falsy value
+section.center
+  pre: code.ruby contenteditable="true"
+    '
+      module Foo
+        module Bar
+          module Quux
+            module Object
+              INSIDE = :object
+            end
+            p Object::INSIDE                   #=> :object
+            p ::Object::Foo::Bar::Quux::INSIDE #=> :quux
+            p ::Object::Foo::Bar::INSIDE       #=> :bar
+            p ::Object::Foo::INSIDE            #=> :foo
+          end
+        end
+      end
