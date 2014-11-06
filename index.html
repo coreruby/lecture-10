@@ -301,6 +301,295 @@ end </code></pre>
   end
 end </code></pre>
 </section>
+<section class="center" data-background="#000">
+  <h2 class="white">
+    Require
+  </h2>
+</section>
+<section>
+  <h2>
+    Kernel#require
+  </h2>
+  <p>
+    Loads a Ruby file by name, returning true if successful and false if the feature is already loaded
+  </p>
+</section>
+<section class="center">
+  <pre><code class="ruby" contenteditable="true">require "my_library.rb" #=> true
+require "/absolute_path/to/ruby/file/with_or_without_ext"
+require "db_driver" </code></pre>
+</section>
+<section>
+  <h2>
+    Kernel#require
+  </h2>
+  <p>
+    If the filename does not resolve to an absolute path, it will be searched for in the directories listed in $LOAD_PATH ($:).
+  </p>
+</section>
+<section class="center">
+  <pre><code class="ruby" contenteditable="true">require 'English.rb'
+
+$LOAD_PATH == $: </code></pre>
+</section>
+<section class="center">
+  <p>
+    You can thank Perl for that
+  </p>
+</section>
+<section class="center">
+  <img class="inline" src="img/troll.png" />
+</section>
+<section>
+  <h2>
+    Kernel#require
+  </h2>
+  <p>
+    If the filename has the extension “.rb”, it is loaded as a source file
+  </p>
+</section>
+<section>
+  <h2>
+    Kernel#require
+  </h2>
+  <p>
+    if the extension is "so", "o", or "dll", Ruby loads the shared library as a Ruby extension
+  </p>
+</section>
+<section>
+  <h2>
+    Kernel#require
+  </h2>
+  <p>
+    Otherwise, Ruby tries adding “.rb”, “.so”, and so on to the name until found.
+  </p>
+</section>
+<section>
+  <h2>
+    Kernel#require
+  </h2>
+  <If>the file named cannot be found, a LoadError will be raised.</If>
+</section>
+<section class="center">
+  <pre><code class="ruby" contenteditable="true">require 'troll' #=> LoadError </code></pre>
+</section>
+<section>
+  <h2>
+    Kernel#require_relative
+  </h2>
+  <p>
+    Loads the library named string relative to the requiring file’s path
+  </p>
+</section>
+<section>
+  <h2>
+    Kernel#require_relative
+  </h2>
+  <p>
+    If the file’s path cannot be determined a LoadError is raised
+  </p>
+</section>
+<section>
+  <h2>
+    Kernel#require_relative
+  </h2>
+  <p>
+    If a file is loaded true is returned and false otherwise
+  </p>
+</section>
+<section class="center">
+  <pre><code class="ruby" contenteditable="true">require_relative 'troll' #=> LoadError </code></pre>
+</section>
+<section class="center">
+  <img class="inline" src="img/troll.png" />
+</section>
+<section>
+  <h2>
+    $LOAD_PATH
+  </h2>
+  <p>
+    The path where Kernel#require looks for library files
+  </p>
+</section>
+<section>
+  <h2>
+    $LOAD_PATH
+  </h2>
+  <p>
+    Can be controlled during runtime
+  </p>
+</section>
+<section>
+  <h2>
+    $LOAD_PATH
+  </h2>
+  <p>
+    Can be tweaked load time with ruby -Iload_path
+  </p>
+</section>
+<section>
+  <h2>
+    $LOAD_PATH
+  </h2>
+  <p>
+    An array, nothing special
+  </p>
+</section>
+<section class="center">
+  <pre><code class="ruby" contenteditable="true">.
+├── LICENSE
+├── README
+├── Rakefile
+├── bin
+│   └── hack
+├── hack.gemspec
+├── lib
+│   ├── hack
+│   └── hack.rb
+└── templates
+    ├── problem
+    └── slide </code></pre>
+</section>
+<section class="center">
+  <pre><code class="ruby" contenteditable="true">$LOAD_PATH << './lib'
+
+require 'hack' #=> true </code></pre>
+</section>
+<section>
+  <h2>
+    Kernel#load
+  </h2>
+  <p>
+    Loads and executes the Ruby program in the file filename
+  </p>
+</section>
+<section>
+  <h2>
+    Kernel#load
+  </h2>
+  <p>
+    If the filename does not resolve to an absolute path, the file is searched for in the library directories listed in $LOAD_PATH
+  </p>
+</section>
+<section>
+  <h2>
+    Kernel#load
+  </h2>
+  <p>
+    If the optional wrap parameter is true, the loaded script will be executed under an anonymous module, protecting the calling program’s global namespace
+  </p>
+</section>
+<section>
+  <h2>
+    Kernel#load
+  </h2>
+  <p>
+    In no circumstance will any local variables in the loaded file be propagated to the loading environment
+  </p>
+</section>
+<section class="center">
+  <pre><code class="ruby" contenteditable="true">load './troll' #=> LoadError </code></pre>
+</section>
+<section class="center">
+  <img class="inline" src="img/troll.png" />
+</section>
+<section class="center" data-background="#F00">
+  <p class="white">
+    This joke never gets old
+  </p>
+</section>
+<section data-background="http://www.bestmemes.com/pix/36189114.jpg"></section>
+<section data-background="http://www.bestmemes.com/pix/36189114.jpg">
+  <p class="white">
+    What if modules and classes could be anonymous?
+  </p>
+</section>
+<section>
+  <h2>
+    Module.new
+  </h2>
+  <p>
+    Creates a new anonymous module
+  </p>
+</section>
+<section>
+  <h2>
+    Module.new
+  </h2>
+  <p>
+    If a block is given, it is passed the module object, and the block is evaluated in the context of this module
+  </p>
+</section>
+<section>
+  <h2>
+    Module.new
+  </h2>
+  <p>
+    You can give the module a name by assigning the class object to a constant
+  </p>
+</section>
+<section class="center">
+  <pre><code class="ruby" contenteditable="true">hotdog = Module.new do
+  def reaction
+    'Why did I put this inside of me?'
+  end
+end
+
+include hotdog
+reaction </code></pre>
+</section>
+<section>
+  <h2>
+    Class.new
+  </h2>
+  <p>
+    Creates a new anonymous (unnamed) class with the given superclass (or Object if no parameter is given)
+  </p>
+</section>
+<section>
+  <h2>
+    Class.new
+  </h2>
+  <p>
+    You can give the class a name by assigning the class object to a constant
+  </p>
+</section>
+<section>
+  <h2>
+    Class.new
+  </h2>
+  <p>
+    Then, it isn't anonymous anymore
+  </p>
+</section>
+<section>
+  <h2>
+    Class.new
+  </h2>
+  <p>
+    If a block is given, it is passed the class object, and the block is evaluated in the context of this class
+  </p>
+</section>
+<section class="center">
+  <pre><code class="ruby" contenteditable="true">fred = Class.new do
+  def meth1
+    "hello"
+  end
+
+  def meth2
+    "bye"
+  end
+end
+
+a = fred.new
+a.meth1
+a.meth2 </code></pre>
+</section>
+<section class="center" data-background="#000">
+  <p class="white">
+    Straight outta Ruby docs
+  </p>
+</section>
       </div>
     </div>
     <script src="js/head.min.js"></script>
